@@ -9,12 +9,18 @@ import static org.junit.Assert.*;
 
 import org.openqa.selenium.*;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.remote.DesiredCapabilities;
 
 public class AboutFeature {
+	
 	public static String curDir = System.getProperty("user.dir");
 	private WebDriver driver;
 	private String baseUrl;
+	ChromeOptions options = new ChromeOptions();
+	
+ 
+	
 	private StringBuffer verificationErrors = new StringBuffer();
 	DesiredCapabilities capabilities = DesiredCapabilities.chrome();
 
@@ -40,10 +46,12 @@ public class AboutFeature {
 		 * System.setProperty("webdriver.chrome.driver", curDir +
 		 * "\\Drivers\\chromedriver.exe");
 		 */
+		options.setBinary("/usr/bin/google-chrome");
+		capabilities.setCapability(ChromeOptions.CAPABILITY, options);
 		System.setProperty("webdriver.chrome.driver", curDir + "/Drivers/chromedriver");
 		capabilities.setBrowserName("chrome");
 		capabilities.setPlatform(Platform.LINUX);
-
+		
 		driver = new ChromeDriver(capabilities);
 		driver.manage().window().maximize();
 
