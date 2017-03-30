@@ -48,6 +48,8 @@ public class AboutFeatureFirefox {
 		System.setProperty("webdriver.firefox.bin","/usr/bin/firefox");
 		System.setProperty("webdriver.gecko.driver", curDir + "/Drivers/geckodriver"); 
 		capabilities.setCapability("marionette", true);
+		capabilities.setBrowserName("firefox");
+		capabilities.setCapability("firefox_binary","/usr/bin/firefox");
 		driver = new FirefoxDriver(capabilities);
 
 		driver.manage().window().maximize();
