@@ -5,7 +5,7 @@ import org.junit.runners.Suite;
 import org.junit.runners.Suite.SuiteClasses;
 
 @RunWith(Suite.class)
-@SuiteClasses({ AboutFeature.class, AboutFeatureFirefox.class /*, BookFeature.class, TrackFeature.class*/})
+@SuiteClasses({ AboutFeatureFirefox.class /*, BookFeature.class, TrackFeature.class, AboutFeature.class*/})
 public class TestSuite {
 
 }
