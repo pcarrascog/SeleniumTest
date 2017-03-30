@@ -14,7 +14,7 @@ import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.remote.DesiredCapabilities;
 
 public class AboutFeatureFirefox {
-
+	
 	public static String curDir = System.getProperty("user.dir");
 	private WebDriver driver;
 	private String baseUrl;
@@ -45,6 +45,7 @@ public class AboutFeatureFirefox {
 		 * "/Drivers/chromedriver");
 		 * 
 		 */
+		System.setProperty("webdriver.firefox.bin","/usr/bin/firefox");
 		System.setProperty("webdriver.gecko.driver", curDir + "/Drivers/geckodriver"); 
 		capabilities.setCapability("marionette", true);
 		driver = new FirefoxDriver(capabilities);
