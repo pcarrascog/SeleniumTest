@@ -46,6 +46,7 @@ public class AboutFeatureFirefox {
 		 * 
 		 */
 		System.setProperty("webdriver.gecko.driver", curDir + "/Drivers/geckodriver"); 
+		capabilities.setCapability("marionette", true);
 		driver = new FirefoxDriver(capabilities);
 
 		driver.manage().window().maximize();
