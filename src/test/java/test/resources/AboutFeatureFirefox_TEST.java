@@ -8,12 +8,11 @@ import org.junit.*;
 import static org.junit.Assert.*;
 
 import org.openqa.selenium.*;
-import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.chrome.ChromeOptions;
+import org.openqa.selenium.firefox.amd64.*;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.remote.DesiredCapabilities;
 
-public class AboutFeatureFirefox {
+public class AboutFeatureFirefox_TEST {
 	
 	public static String curDir = System.getProperty("user.dir");
 	private WebDriver driver;

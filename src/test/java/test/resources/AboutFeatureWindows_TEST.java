@@ -12,7 +12,7 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.remote.DesiredCapabilities;
 
-public class AboutFeatureWindows {
+public class AboutFeatureWindows_TEST {
 	
 	public static String curDir = System.getProperty("user.dir");
 	private WebDriver driver;

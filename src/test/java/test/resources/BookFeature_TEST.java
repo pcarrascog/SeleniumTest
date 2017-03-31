@@ -9,49 +9,28 @@ import static org.junit.Assert.*;
 
 import org.openqa.selenium.*;
 import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.remote.DesiredCapabilities;
 
-public class AboutFeature {
-	
-	public static String curDir = System.getProperty("user.dir");
-	private WebDriver driver;
+public class BookFeature_TEST {
+	private ChromeDriver driver;
 	private String baseUrl;
-	ChromeOptions options = new ChromeOptions();
-	
- 
-	
-	private StringBuffer verificationErrors = new StringBuffer();
+
 	DesiredCapabilities capabilities = DesiredCapabilities.chrome();
+	private StringBuffer verificationErrors = new StringBuffer();
+	public static String curDir = System.getProperty("user.dir");
 
 	@Before
 	public void setUp() throws Exception {
-		/*
-		 * System.setProperty("webdriver.gecko.driver", curDir +
-		 * "\\Drivers\\geckodriver.exe"); driver = new FirefoxDriver();
-		 * 
-		 * System.setProperty("webdriver.chrome.driver", curDir +
-		 * "\\Drivers\\chrome.exe"); WebDriver driver = new ChromeDriver();
-		 * 
-		 * System.setProperty("webdriver.ie.driver", curDir +
-		 * "\\Drivers\\IEDriverServer.exe"); driver = new
-		 * InternetExplorerDriver();
-		 * 
-		 */
 	}
 
 	@Test
-	public void testAboutFeature() throws Exception {
+	public void testTC003() throws Exception {
+
 		/*
 		 * System.setProperty("webdriver.chrome.driver", curDir +
 		 * "\\Drivers\\chromedriver.exe");
 		 */
-		options.setBinary("/usr/bin/google-chrome");
-		capabilities.setCapability(ChromeOptions.CAPABILITY, options);
 		System.setProperty("webdriver.chrome.driver", curDir + "/Drivers/chromedriver");
-		capabilities.setBrowserName("chrome");
-		capabilities.setPlatform(Platform.LINUX);
-		
 		driver = new ChromeDriver(capabilities);
 		driver.manage().window().maximize();
 
@@ -60,15 +39,23 @@ public class AboutFeature {
 		int tiempoL = 1000;
 		int tiempoML = 5000;
 		Robot robot = new Robot();
-
 		driver.get(baseUrl + "/cargo-tracker/");
-		robot.delay(tiempoML);
 		driver.findElement(By.linkText("Administration Interface")).click();
 		robot.delay(tiempoL);
-		driver.findElement(By.linkText("About")).click();
+		driver.findElement(By.linkText("Book")).click();
 		robot.delay(tiempoL);
-		assertEquals("This interface includes several features for Cargo Administrators:",
-				driver.findElement(By.cssSelector("h3")).getText());
+		driver.findElement(By.xpath("//div[@id='j_idt29:origin']/div[3]/span")).click();
+		robot.delay(tiempoML);
+		driver.findElement(By.xpath("//div[@id='j_idt29:origin_panel']/div/ul/li[2]")).click();
+		robot.delay(tiempoML);
+		driver.findElement(By.id("j_idt29:j_idt36")).click();
+		robot.delay(tiempoL);
+		driver.findElement(By.xpath("//div[@id='j_idt29:destination']/div[3]/span")).click();
+		driver.findElement(By.id("j_idt29:j_idt37")).click();
+		robot.delay(tiempoL);
+		driver.findElement(By.linkText("29")).click();
+		robot.delay(tiempoL);
+		driver.findElement(By.id("dateForm:bookBtn")).click();
 		robot.delay(tiempoL);
 	}
 
