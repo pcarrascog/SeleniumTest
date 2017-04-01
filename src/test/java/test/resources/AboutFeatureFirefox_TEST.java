@@ -39,16 +39,16 @@ public class AboutFeatureFirefox_TEST {
 
 	@Test
 	public void testAboutFeature() throws Exception {
-		/*
-		 * System.setProperty("webdriver.chrome.driver", curDir +
-		 * "/Drivers/chromedriver");
-		 * 
-		 */
-		System.setProperty("webdriver.firefox.bin","/usr/bin/firefox");
-		System.setProperty("webdriver.gecko.driver", curDir + "/Drivers/geckodriver"); 
+		
+		  System.setProperty("webdriver.chrome.driver", curDir +
+		  "/Drivers/chromedriver.exe");
+		  
+		
+		//System.setProperty("webdriver.firefox.bin","/usr/bin/firefox");
+		System.setProperty("webdriver.gecko.driver", curDir + "/Drivers/geckodriver.exe"); 
 		capabilities.setCapability("marionette", true);
 		capabilities.setBrowserName("firefox");
-		capabilities.setCapability("firefox_binary","/usr/bin/firefox");
+		//capabilities.setCapability("firefox_binary","/usr/bin/firefox");
 		driver = new FirefoxDriver(capabilities);
 
 		driver.manage().window().maximize();
