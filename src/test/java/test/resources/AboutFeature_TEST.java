@@ -43,7 +43,7 @@ public class AboutFeature_TEST {
 
 		System.setProperty("webdriver.chrome.driver", curDir + "\\Drivers\\chromedriver.exe");
 
-		options.setBinary("/usr/bin/google-chrome");
+		//options.setBinary("/usr/bin/google-chrome");
 		capabilities.setCapability(ChromeOptions.CAPABILITY, options);
 		// System.setProperty("webdriver.chrome.driver", curDir +
 		// "/Drivers/chromedriver");
